@@ -1,8 +1,8 @@
 # OpenMP
 
 Open Multi-Processing is an API for shared memory multi-processing.   
-In this project, you can test basic functions of OpenMP in C. 
-
+In this project, you can test basic functions of OpenMP in C.   
+In 2022 Spring Science Parallel Computing Class. 
 # How to work 
 
 First, on your local folder clone the codes. 
@@ -26,3 +26,5 @@ gcc test.c -fopenmp -o test.exe
 ./test
 </code>
 </pre>
+
+
