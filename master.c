@@ -1,5 +1,5 @@
 /*
-Minyoung Kim (Mar. 23, 2022)
+Minyoung Kim (Mar. 25, 2022)
 2022 Spring PSC class 
 Subject: OpenMP
 compile: gcc {fileBasenameNoExtension}.c -fopenmp -o ${fileDirname}\\${fileBasenameNoExtension}.exe
@@ -28,9 +28,6 @@ int main(){
         if (n == -1){
             printf("%d\n", omp_get_thread_num());
         }
-
-        
-
     }
 }
 
