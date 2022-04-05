@@ -11,6 +11,7 @@ int main(){
 
     omp_set_num_threads(5);
     int N = 10;
+    
     // do/for directive 는 자동으로 loop 을 나눠서 배정함 
     #pragma omp parallel 
     // 주의: #pragma omp parallel nowait 은 에러. 나눠야 함 
@@ -22,9 +23,9 @@ int main(){
             // i=0~9 가 thread 5개에 나뉘어 들어감 
             printf("Thread num = %d, i = %d\n", omp_get_thread_num(), i);
         } // <- nowait 없이는 여기가 암시적 barrier
-        #pragma omp for 
+        #pragma omp for
         for(int i=0; i<N; i++){
-            printf("Thread num = %d, i = %d\n", omp_get_thread_num(), i*10);
+            printf("Thread num = %d, i = %d\n", omp_get_thread_num(), i);
         }
     }
 

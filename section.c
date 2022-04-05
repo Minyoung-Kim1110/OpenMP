@@ -12,7 +12,7 @@ compile: gcc {fileBasenameNoExtension}.c -fopenmp -o ${fileDirname}\\${fileBasen
     
 int main(){ 
     int a;
-    omp_set_num_threads(4);
+    omp_set_num_threads(3);
     // lastprivate: 마지막 섹션의 변수값이 메인 영역에 있는 변수로 전달됨. 
     #pragma omp parallel sections lastprivate(a)
     {

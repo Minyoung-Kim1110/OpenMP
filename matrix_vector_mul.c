@@ -11,7 +11,8 @@ compile: gcc {fileBasenameNoExtension}.c -fopenmp -o ${fileDirname}\\${fileBasen
 
     
 int main(){ 
-    int N=3, M=10;
+    omp_set_num_threads(3);
+    int N=5, M=10;
     int A[N][M];
     int x[M], y[N];
     int i, j, k, sum;
@@ -35,13 +36,14 @@ int main(){
         }
         
         // calculate y = Ax
-        #pragma omp for private(j, sum) 
+        #pragma omp for private(j, sum) schedule(dynamic, 2)
         for(i=0; i<N; i++){
             sum = 0.0;
             for(j=0; j<M; j++){
                 sum+=A[i][j]*x[j];
             }
             y[i]=sum;
+            printf("Thread num = %d , calculated %d\n", omp_get_thread_num(), i);
         }
     }
 
