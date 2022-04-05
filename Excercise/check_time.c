@@ -14,6 +14,7 @@ int main(){
     double start2, end2;
     double cpu_time_used; 
 
+    omp_set_num_threads(8);
     int N =  100000; 
     int a[N];
 
